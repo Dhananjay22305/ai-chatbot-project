@@ -2,10 +2,10 @@ import tkinter as tk
 from tkinter import scrolledtext
 import google.generativeai as genai
 
-# Set your Gemini API key here
+
 genai.configure(api_key="AIzaSyC84hKRgSMRcXteYmR4_YeBvPMaz2rdgRc")
 
-# Initialize the Gemini model
+
 model = genai.GenerativeModel("models/gemini-1.5-flash")
 
 # Function to handle user input and get response
@@ -33,7 +33,7 @@ root.title("Gemini Chatbot")
 root.geometry("600x600")
 root.configure(bg="#1e1e1e")
 
-# Welcome message centered at top
+
 header_frame = tk.Frame(root, bg="#1e1e1e")
 header_frame.pack(pady=(10, 0), fill=tk.X)
 
@@ -52,7 +52,7 @@ chat_window.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
 chat_window.tag_config("user", foreground="#9cdcfe", font=("Arial", 12, "bold"))
 chat_window.tag_config("bot", foreground="#ce9178", font=("Arial", 12, "italic"))
 
-# Input area
+
 input_frame = tk.Frame(root, bg="#1e1e1e")
 input_frame.pack(pady=10, fill=tk.X, padx=10)
 
@@ -62,6 +62,4 @@ user_entry.bind("<Return>", send_message)
 
 send_button = tk.Button(input_frame, text="Send", command=send_message, font=("Arial", 12, "bold"), bg="#007acc", fg="white")
 send_button.pack(side=tk.RIGHT)
-
-# Start the application
 root.mainloop()
